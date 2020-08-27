@@ -1,0 +1,17 @@
+*{
+    margin:0px;
+}
+header{
+    background-color: rgba(8, 8, 8, 0.692);
+    width:100%;
+    padding:40px;
+    height:100%;
+}
+.container{
+    text-align: center;
+    font-size: 5vw;
+    font-family:sans-serif;
+    color:white;
+    text-shadow: 1px 5px 10px rgba(8, 8, 8, 0.692);
+    
+}

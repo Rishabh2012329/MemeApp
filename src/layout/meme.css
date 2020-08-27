@@ -1,0 +1,18 @@
+.meme{
+    text-align: center;
+    position: relative;
+}
+.top{ 
+    top:8%;
+    left:28%;
+    position: absolute;
+    color:white;
+    text-shadow:1px 1px 8px black;
+}
+.bottom{
+    bottom:4%;
+    left:28%;
+    position:absolute;
+    color:white;
+    text-shadow:1px 1px 8px black;
+}

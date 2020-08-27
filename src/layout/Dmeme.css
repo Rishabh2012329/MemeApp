@@ -1,0 +1,14 @@
+
+
+.rit .container{
+ display:grid;
+grid-template-columns: 20vw 30vw 20vw;
+ align-content: center;
+ justify-content: center;
+ margin-top: 1%;
+}
+.rit .container img:hover{
+   cursor: pointer;
+
+}
+   
