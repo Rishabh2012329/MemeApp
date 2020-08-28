@@ -2,8 +2,7 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import Dmeme from './Dmeme';
 import '../layout/meme.css';
-import firebase from 'firebase/app';
-import { useFirebase } from 'react-redux-firebase'
+import firebase from 'firebase';
 
 export default class Meme extends Component {
     constructor(){
@@ -22,7 +21,7 @@ export default class Meme extends Component {
         text4:"",
         save:false,
         i:0,
-        color:"",
+      
     }
     
     componentDidMount(){
@@ -71,7 +70,11 @@ export default class Meme extends Component {
         }
         
           save(){
-           var data=firebase.database();
+              const {uid} =this.props;
+            var images=firebase.database().ref('images/'+uid);
+            images.push({
+                img:this.state.oldimg.url
+            })
         }
     
     render() {

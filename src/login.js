@@ -1,15 +1,16 @@
 import React, { Component } from 'react';
+import {BrowserRouter as Router,Route,Switch} from 'react-router-dom';
+import Saved from './meme/Saved'
 import Nav from './layout/Nav';
 import Header from './layout/Header';
 import './layout/login.css';
 import Meme from './meme/meme';
-import { render } from 'react-dom'
 import { Provider } from 'react-redux'
-import firebase from 'firebase/app'
+import firebase from 'firebase'
 import 'firebase/auth'
 // import 'firebase/firestore' // <- needed if using firestore
 // import 'firebase/functions' // <- needed if using httpsCallable
-import { createStore, combineReducers, compose } from 'redux'
+import { createStore, combineReducers } from 'redux'
 import {
   ReactReduxFirebaseProvider,
   firebaseReducer
@@ -35,6 +36,7 @@ const rrfConfig = {
 
 // Initialize firebase instance
 firebase.initializeApp(fbConfig)
+let database=firebase.database();
 
 // Initialize other services on firebase instance
 // firebase.firestore() // <- needed if using firestore
@@ -64,7 +66,8 @@ export default class Login extends Component {
         email:"",
         password:"",
         confpass:"",
-        meme:false
+        meme:false,
+        user:null,
     }
     log=(e)=>{
 
@@ -82,7 +85,15 @@ export default class Login extends Component {
         firebase.auth().signInWithEmailAndPassword(
             email,password
         ).then(()=>{
-            this.setState({meme:true})
+            firebase.auth().onAuthStateChanged(user=>{
+                if(user.emailVerified)
+                this.setState({meme:true})
+                else{
+                    alert("you haven't verified your email yet")
+                }
+                
+            })
+            
         }).catch((err)=>{
             alert(err.message)
         })
@@ -103,9 +114,14 @@ export default class Login extends Component {
                 alert("an email has been sent to email address please verify that it's you")
             }).catch(err=>{
                 alert(err.message)
-            }) , 
-            
-            firebase.auth().currentUser.emailVerified?this.setState({meme:true}):null
+            }) ,          
+            firebase.auth().onAuthStateChanged((user)=>{
+                if(user){
+                    console.log(user.emailVerified)
+                }
+                else
+                 console.log(this.state.meme)
+            })
         )).catch(err=>{
             alert(err.message)
         })  
@@ -117,13 +133,14 @@ export default class Login extends Component {
     onchange=(e)=>{
         this.setState({[e.target.name]:e.target.value})
     }
-    meme=()=>{
-        this.setState({meme:true})
+    meme=(u)=>{
+        this.setState({meme:true,user:u})
     }
     componentDidMount(){
         firebase.auth().onAuthStateChanged((user)=>{
             if (user) {
-              this.meme();
+              if(user.emailVerified)
+              this.meme(user);
             } 
           });     
     }
@@ -175,9 +192,8 @@ export default class Login extends Component {
                     {
                         this.state.meme? <div><Nav name={firebase.auth().currentUser} logout={this.logout}/>
                         <Header/>
-                        <Meme /></div>:logi
-                    }
-                
+                        <Meme uid={this.state.user.uid||null}/></div>:logi
+                    }                   
                 </ReactReduxFirebaseProvider>
             </Provider>
            
