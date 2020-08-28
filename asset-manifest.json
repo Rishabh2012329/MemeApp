@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/Rishabh2012329/memeApp/static/css/main.4ef87527.chunk.css",
+    "main.js": "/Rishabh2012329/memeApp/static/js/main.5c3d22ae.chunk.js",
+    "main.js.map": "/Rishabh2012329/memeApp/static/js/main.5c3d22ae.chunk.js.map",
+    "runtime-main.js": "/Rishabh2012329/memeApp/static/js/runtime-main.d80fd2ae.js",
+    "runtime-main.js.map": "/Rishabh2012329/memeApp/static/js/runtime-main.d80fd2ae.js.map",
+    "static/js/2.f6f4488a.chunk.js": "/Rishabh2012329/memeApp/static/js/2.f6f4488a.chunk.js",
+    "static/js/2.f6f4488a.chunk.js.map": "/Rishabh2012329/memeApp/static/js/2.f6f4488a.chunk.js.map",
+    "index.html": "/Rishabh2012329/memeApp/index.html",
+    "precache-manifest.f3eda98e4fdb8bca13db26595280e8ab.js": "/Rishabh2012329/memeApp/precache-manifest.f3eda98e4fdb8bca13db26595280e8ab.js",
+    "service-worker.js": "/Rishabh2012329/memeApp/service-worker.js",
+    "static/css/main.4ef87527.chunk.css.map": "/Rishabh2012329/memeApp/static/css/main.4ef87527.chunk.css.map",
+    "static/js/2.f6f4488a.chunk.js.LICENSE.txt": "/Rishabh2012329/memeApp/static/js/2.f6f4488a.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.d80fd2ae.js",
+    "static/js/2.f6f4488a.chunk.js",
+    "static/css/main.4ef87527.chunk.css",
+    "static/js/main.5c3d22ae.chunk.js"
+  ]
+}
