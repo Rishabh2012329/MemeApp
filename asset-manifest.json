@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/MemeApp/static/css/main.6ed5a62f.chunk.css",
-    "main.js": "/MemeApp/static/js/main.8dca000f.chunk.js",
-    "main.js.map": "/MemeApp/static/js/main.8dca000f.chunk.js.map",
+    "main.js": "/MemeApp/static/js/main.367c82f3.chunk.js",
+    "main.js.map": "/MemeApp/static/js/main.367c82f3.chunk.js.map",
     "runtime-main.js": "/MemeApp/static/js/runtime-main.09ec14da.js",
     "runtime-main.js.map": "/MemeApp/static/js/runtime-main.09ec14da.js.map",
     "static/js/2.f8f70976.chunk.js": "/MemeApp/static/js/2.f8f70976.chunk.js",
     "static/js/2.f8f70976.chunk.js.map": "/MemeApp/static/js/2.f8f70976.chunk.js.map",
     "index.html": "/MemeApp/index.html",
-    "precache-manifest.f6c721c386e1221f3b792dc1838cb893.js": "/MemeApp/precache-manifest.f6c721c386e1221f3b792dc1838cb893.js",
+    "precache-manifest.1915604fe7d0b6f20b25d10a73945a47.js": "/MemeApp/precache-manifest.1915604fe7d0b6f20b25d10a73945a47.js",
     "service-worker.js": "/MemeApp/service-worker.js",
     "static/css/main.6ed5a62f.chunk.css.map": "/MemeApp/static/css/main.6ed5a62f.chunk.css.map",
     "static/js/2.f8f70976.chunk.js.LICENSE.txt": "/MemeApp/static/js/2.f8f70976.chunk.js.LICENSE.txt"
@@ -17,6 +17,6 @@
     "static/js/runtime-main.09ec14da.js",
     "static/js/2.f8f70976.chunk.js",
     "static/css/main.6ed5a62f.chunk.css",
-    "static/js/main.8dca000f.chunk.js"
+    "static/js/main.367c82f3.chunk.js"
   ]
 }
