@@ -1,15 +1,27 @@
 i{
     margin:0.5%;
 }
-i:hover{
-    font-size: 1.5vw;
-    cursor: pointer;
+#ey{
+    font-size:2.5vw;
+}
+#back{
+    font-size:3vh
 }
 #sign{
     font-style: oblique;
-    font-size: 3vh;
+    font-size: 1.5vw;
 }
 #log{
     font-style: oblique;
-    font-size: 3vh; 
+    font-size: 1.5vw; 
+}
+
+input[type="text"]{
+    font-size:1.5vw;
+}
+input[type="email"]{
+    font-size:1.5vw;
+}
+input[type="password"]{
+    font-size:1.5vw;
 }

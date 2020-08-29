@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
-import {BrowserRouter as Router,Route,Switch} from 'react-router-dom';
-import Saved from './meme/Saved'
+
 import Nav from './layout/Nav';
 import Header from './layout/Header';
 import './layout/login.css';
@@ -62,12 +61,13 @@ const rrfProps = {
 
 export default class Login extends Component {
     state={
-        signup:null,
+        signup:"",
         email:"",
         password:"",
         confpass:"",
         meme:false,
         user:null,
+        save:false,
     }
     log=(e)=>{
 
@@ -136,12 +136,18 @@ export default class Login extends Component {
     meme=(u)=>{
         this.setState({meme:true,user:u})
     }
+    setmeme=()=>{
+        this.setState({signup:null})
+    }
     componentDidMount(){
         firebase.auth().onAuthStateChanged((user)=>{
             if (user) {
               if(user.emailVerified)
               this.meme(user);
             } 
+            else{
+                this.setmeme();
+            }
           });     
     }
     show=(e)=>{
@@ -154,7 +160,13 @@ export default class Login extends Component {
         document.getElementById("pass").type="password"
      }
     }
-    
+    setsave=()=>{
+        this.setState({save:true})
+       
+    }
+    sethome=()=>{
+        this.setState({save:false})
+    }
     render() {
         
         const logi=(<div>
@@ -163,13 +175,13 @@ export default class Login extends Component {
         }
         <div className="card" style={{width:"40%",margin:"auto",marginTop:"10%",padding:"1%"}}>
             {this.state.signup===true?<div><input type="email" name="email" style={{width:"96%"}} onChange={this.onchange} className="form-control" placeholder="email..."></input>
-            <div style={{display:"flex",}}><input id="pass" type="password" name="password"  className="form-control" style={{marginTop:"2%"}} onChange={this.onchange} placeholder="password..."></input><i style={{marginTop:"4%"}} onClick={this.show} className="fa fa-eye"></i></div>
+            <div style={{display:"flex",}}><input id="pass" type="password" name="password"  className="form-control" style={{marginTop:"2%"}} onChange={this.onchange} autoComplete="off" placeholder="password..."></input><i id="ey" style={{marginTop:"4%"}} onClick={this.show} className="fa fa-eye"></i></div>
             <input type="password" name="confpass"  className="form-control" style={{width:"96%",marginTop:"2%"}} onChange={this.onchange} placeholder="confirm password..."></input>
             <button id="sign" className="btn btn-dark form-control" style={{marginTop:"2%"}} onClick={this.sign}>Signup</button>
             </div>:null
             }
              {this.state.signup===false?<div><input type="email" style={{width:"96%"}} name="email" value={this.state.email} className="form-control" onChange={this.onchange} placeholder="email..." ></input>
-             <div style={{display:"flex",}}><input type="password" id="pass" value={this.state.password} name="password" className="form-control" onChange={this.onchange} style={{marginTop:"2%"}} placeholder="password..."></input><i style={{marginTop:"4%"}} onClick={this.show} className="fa fa-eye"></i></div>
+             <div style={{display:"flex",}}><input type="password" id="pass" value={this.state.password} name="password" className="form-control" autoComplete="off" onChange={this.onchange} style={{marginTop:"2%"}} placeholder="password..."></input><i id="ey" style={{marginTop:"4%"}} onClick={this.show} className="fa fa-eye"></i></div>
             <button id="log" className="btn btn-dark form-control" style={{marginTop:"2%"}} onClick={this.login}>Login</button>
            </div>:null
             }           
@@ -188,12 +200,14 @@ export default class Login extends Component {
         return (
             <Provider store={store}>
                 <ReactReduxFirebaseProvider {...rrfProps}>
+                  
                    
                     {
-                        this.state.meme? <div><Nav name={firebase.auth().currentUser} logout={this.logout}/>
+                        this.state.meme? <div><Nav set={this.sethome} setsave={this.setsave} name={firebase.auth().currentUser} logout={this.logout}/>
                         <Header/>
-                        <Meme uid={this.state.user.uid||null}/></div>:logi
+                        <Meme saved={this.state.save} uid={this.state.user.uid||null}/></div>:logi
                     }                   
+                
                 </ReactReduxFirebaseProvider>
             </Provider>
            

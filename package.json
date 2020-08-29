@@ -2,6 +2,7 @@
   "name": "meme",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://Rishabh2012329.github.io/MemeApp",
   "dependencies": {
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.5.0",
@@ -9,6 +10,7 @@
     "axios": "^0.20.0",
     "classnames": "^2.2.6",
     "firebase": "^7.19.0",
+    "gh-pages": "^3.1.0",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-redux-firebase": "^3.7.0",
@@ -17,6 +19,7 @@
     "react-scripts": "3.4.3"
   },
   "scripts": {
+    "deploy":"npm run build&&gh-pages -d build",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",

@@ -3,6 +3,7 @@ import axios from 'axios';
 import Dmeme from './Dmeme';
 import '../layout/meme.css';
 import firebase from 'firebase';
+import Saved from './Saved';
 
 export default class Meme extends Component {
     constructor(){
@@ -19,9 +20,7 @@ export default class Meme extends Component {
         text2:"",
         text3:"",
         text4:"",
-        save:false,
         i:0,
-      
     }
     
     componentDidMount(){
@@ -73,7 +72,7 @@ export default class Meme extends Component {
               const {uid} =this.props;
             var images=firebase.database().ref('images/'+uid);
             images.push({
-                img:this.state.oldimg.url
+                img:this.state.img.url||this.state.img
             })
         }
     
@@ -84,31 +83,33 @@ export default class Meme extends Component {
                    </div>)         
         }
        
-        
+        const meme=<div>
+               
+            {
+                this.state.img?
+            <div className="card" style={{width:"40%",margin:"auto"}}> 
+                    {input} 
+            <button className="btn btn-dark" style={{margin:"2%",fontSize:"1.5vw"}} onClick={this.onsub}>Submit</button>                  
+            </div>:null
+         }
+             {
+                this.state.img?
+                <div className="meme">
+                    <img src={this.state.img.url||this.state.img} style={{width:"35vw",marginTop:"3%"}}></img>
+                    <button style={{fontSize:"1.5vw"}} onClick={this.save.bind(this)} className="btn btn-dark">Save</button>
+                 </div>   
+                :null
+            }
+            {
+               this.state.allimg.length!==0?
+                 <Dmeme img={this.state.allimg} dispatch={this.dispatch}/>:null 
+            }
+           
+        </div>
 
         return (
             <div>
-               
-                {
-                    this.state.img?
-                <div className="card" style={{width:"40%",margin:"auto"}}> 
-                        {input} 
-                <button className="btn btn-dark" style={{margin:"2%",fontSize:"1.5vw"}} onClick={this.onsub}>Submit</button>                  
-                </div>:null
-             }
-                 {
-                    this.state.img?
-                    <div className="meme">
-                        <img src={this.state.img.url||this.state.img} style={{width:"35vw",marginTop:"3%"}}></img>
-                        <button style={{fontSize:"1.5vw"}} onClick={this.save.bind(this)} className="btn btn-dark">Save</button>
-                     </div>   
-                    :null
-                }
-                {
-                   this.state.allimg.length!==0?
-                     <Dmeme img={this.state.allimg} dispatch={this.dispatch}/>:null 
-                }
-               
+                {this.props.saved?<Saved/>:meme}
             </div>
         )
     }
