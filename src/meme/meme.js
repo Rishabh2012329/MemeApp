@@ -95,7 +95,7 @@ export default class Meme extends Component {
              {
                 this.state.img?
                 <div className="meme">
-                    <img src={this.state.img.url||this.state.img} style={{width:"35vw",marginTop:"3%"}}></img>
+                    <img src={this.state.img.url||this.state.img} style={{width:"50%",marginTop:"3%"}}></img>
                     <button style={{fontSize:"1.5vw"}} onClick={this.save.bind(this)} className="btn btn-dark">Save</button>
                  </div>   
                 :null

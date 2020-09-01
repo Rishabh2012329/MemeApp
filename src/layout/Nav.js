@@ -1,24 +1,25 @@
 import React, { Component } from 'react'
+import './nav.css'
 
 export default class Nav extends Component {
     render() {
         return (
             <div>
-              <nav className="navbar navbar-expand-sm bg-dark navbar-dark">
-                  <div className="navbar-brand active"> Meme</div>
-                  <div className="navbar-nav"><div onClick={this.props.set} className="nav-item"><span className="nav-link">Home</span></div>
-                  <div onClick={this.props.setsave} className="nav-item"><span className="nav-link">SavedMemes</span></div>
+              <nav style={{alignItems:"center"}} className="navb">
+              <div  className="brand"> <span>Meme</span></div>
+                  <div  className="nav1"><div onClick={this.props.set} className="navi">Home</div>
+                  <div onClick={this.props.setsave} className="navi">SavedMemes</div>
                   </div>
-                  <ul style={{marginLeft:"auto"}} className="navbar-nav ">
-                  <li className="nav-item">
-                   <a style={{display:"flex"}} className="nav-link "> <i style={{padding:"4px"}} className="fa fa-user"></i> {this.props.name.providerData[0].uid}</a>
-                  </li>
-                  <li className="nav-item">
-                   <a style={{display:"flex"}} className="nav-link " onClick={this.props.logout}> <i style={{padding:"4px"}} className="fa fa-sign-out"></i> logout</a>
-                  </li>
-                  </ul>
+                  
+                  <div style={{right:"2vw",position:"absolute"}} className="nav2">
+                  <div className="navi">
+                   <a  className="navl "> <i style={{padding:"4px"}} className="fa fa-user"></i> {this.props.name.providerData[0].uid}</a>
+                  </div>
+                  <div style={{marginLeft:"2%"}} className="navi">
+                   <a   className="navl " onClick={this.props.logout}> <i style={{padding:"4px"}} className="fa fa-sign-out"></i> logout</a>
+                  </div>
+                  </div>
                  
-
               </nav>
             </div>
         )

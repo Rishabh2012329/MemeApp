@@ -169,7 +169,8 @@ export default class Login extends Component {
     }
     render() {
         
-        const logi=(<div>
+        const logi=(<div>{
+            this.state.signup!==""?<div>
         {
             this.state.signup===null?null:<i id="back" onClick={this.log} className="fa fa-arrow-left fa-1x"></i>
         }
@@ -193,9 +194,8 @@ export default class Login extends Component {
                 </div>
                 :null
             }
-            
-            
-        </div>
+        </div></div>:null
+    }
     </div>)
         return (
             <Provider store={store}>
