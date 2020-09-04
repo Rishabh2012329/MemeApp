@@ -26,8 +26,8 @@ export default class Dmeme extends Component {
         return (
             <div>
                 <h2 style={{textAlign:"center",fontSize:"3vw"}}>Choose a Templete</h2>
-              <i className="fa fa-chevron-circle-left " style={{float:"left",marginTop:"10%",fontSize:"2vw"}} onClick={this.prev}></i>
-              <i style={{float:"right",marginTop:"10%",fontSize:"2vw"}} className="fa fa-chevron-circle-right" onClick={this.next}></i>
+              <i className="fa fa-chevron-circle-left fa-2x " style={{float:"left",marginTop:"10%"}} onClick={this.prev}></i>
+              <i style={{float:"right",marginTop:"10%"}} className="fa fa-chevron-circle-right fa-2x" onClick={this.next}></i>
                   {   this.state.img.length!==0?<div className="rit">
                         <div style={{width:"50%",}} className="container">
                       <img id="0" src={this.state.img[this.state.index].url}  style={{width:"100%"}} onClick={this.props.dispatch.bind(this,this.state.img[this.state.index])} ></img> 
