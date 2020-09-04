@@ -176,7 +176,7 @@ export default class Login extends Component {
         }
         <div className="card" style={{width:"40%",margin:"auto",marginTop:"10%",padding:"1%"}}>
             {this.state.signup===true?<div><input type="email" name="email" style={{width:"96%"}} onChange={this.onchange} className="form-control" placeholder="email..."></input>
-            <div style={{display:"flex",}}><input id="pass" type="password" name="password"  className="form-control" style={{marginTop:"2%"}} onChange={this.onchange} autoComplete="off" placeholder="password..."></input><i id="ey" style={{marginTop:"4%"}} onClick={this.show} className="fa fa-eye"></i></div>
+            <div style={{display:"flex",alignItems:"center"}}><input id="pass" type="password" name="password"  className="form-control" style={{marginTop:"2%"}} onChange={this.onchange} autoComplete="off" placeholder="password..."></input><i id="ey" onClick={this.show} className="fa fa-eye"></i></div>
             <input type="password" name="confpass"  className="form-control" style={{width:"96%",marginTop:"2%"}} onChange={this.onchange} placeholder="confirm password..."></input>
             <button id="sign" className="btn btn-dark form-control" style={{marginTop:"2%"}} onClick={this.sign}>Signup</button>
             </div>:null

@@ -2,7 +2,7 @@
   display: flex;
   flex-direction: row;
   background-color: black;
-  padding:10px;
+  padding:17px;
 }
 .brand{
     color:white;
@@ -12,7 +12,7 @@
   display: flex;
   flex-direction: row;
   margin-left: 5%;
-  width: 20%;
+  width: 25%;
   justify-content: space-around;
 }
 
@@ -23,7 +23,7 @@
 .navi{
     list-style: none;
     color:grey;
-    font-size: 2vw;
+    font-size:2.5vw
 }
 a{
     color:grey

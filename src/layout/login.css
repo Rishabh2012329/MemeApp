@@ -2,26 +2,39 @@ i{
     margin:0.5%;
 }
 #ey{
-    font-size:2.5vw;
+    font-size:110%;
 }
 #back{
     font-size:3vh
 }
 #sign{
     font-style: oblique;
-    font-size: 1.5vw;
 }
 #log{
     font-style: oblique;
-    font-size: 1.5vw; 
 }
 
 input[type="text"]{
-    font-size:1.5vw;
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    resize: vertical;
 }
 input[type="email"]{
-    font-size:1.5vw;
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  resize: vertical;
 }
-input[type="password"]{
-    font-size:1.5vw;
+input[type="password"]{ 
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    resize: vertical;
+}
+.navl{
+    align-items: center;
 }

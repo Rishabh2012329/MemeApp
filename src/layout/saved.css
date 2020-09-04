@@ -1,14 +1,19 @@
 .cont .container{
     display: grid;
-    grid-template-columns: 50% 50% 50% 50%;
+    grid-template-columns: 20vw 20vw 20vw 20vw;
+    column-gap: 8%;
     width:40%;
     text-align: center;
-    left:10%;
-    position: absolute;
+    align-items: center;
+    justify-content: center;
     
 }
 .grid-item{
     width:100%;
     margin: auto;
     align-content: center;
+}
+.grid-item:hover{
+    cursor: pointer;
+
 }
