@@ -22,11 +22,22 @@
 }
 .navi{
     list-style: none;
+    text-decoration-style: none;
     color:grey;
-    font-size:2.5vw
+    font-size:2.5vw;
 }
+.navi:hover{
+  cursor: pointer;
+  color: rgba(103, 104, 105, 0.247);
+}
+
 a{
-    color:grey
+    color:grey;
+    text-decoration: none;
+}
+a:hover{
+  text-decoration: none;
+  color: rgba(176, 178, 180, 0.425);
 }
 .navl{
     display: flex;

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-
+import Spinner from './layout/Spinner'
 import Nav from './layout/Nav';
 import Header from './layout/Header';
 import './layout/login.css';
@@ -194,23 +194,19 @@ export default class Login extends Component {
                 </div>
                 :null
             }
-        </div></div>:null
+        </div></div>:<Spinner/>
     }
     </div>)
         return (
             <Provider store={store}>
-                <ReactReduxFirebaseProvider {...rrfProps}>
-                  
-                   
+                <ReactReduxFirebaseProvider {...rrfProps}>                             
                     {
                         this.state.meme? <div><Nav set={this.sethome} setsave={this.setsave} name={firebase.auth().currentUser} logout={this.logout}/>
                         <Header/>
                         <Meme saved={this.state.save} uid={this.state.user.uid||null}/></div>:logi
-                    }                   
-                
+                    }                                 
                 </ReactReduxFirebaseProvider>
-            </Provider>
-           
+            </Provider>  
         )
     }
 }

@@ -54,7 +54,7 @@ export default class Meme extends Component {
             let username="RishabhBaid"
             let password="death123"
             let i=0;
-            const {text0,text1,text2,text3,text4,color}=this.state;
+            const {text0,text1,text2,text3,text4}=this.state;
             let boxes=[text0,text1,text2,text3,text4]
             let box="";
             for(i=0;i<this.state.oldimg.box_count;i+=1){
@@ -64,6 +64,8 @@ export default class Meme extends Component {
           axios.post(`https://api.imgflip.com/caption_image?template_id=${template_id}&username=${username}&password=${password}${box}`).then((val)=>{
                  console.log(val.data)
                  this.setState({img:val.data.data.url})
+             }).then(()=>{
+                 alert("image saved successfully")
              })
               
         }
