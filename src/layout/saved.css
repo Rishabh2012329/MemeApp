@@ -2,6 +2,7 @@
     display: grid;
     grid-template-columns: 20vw 20vw 20vw 20vw;
     column-gap: 8%;
+    row-gap: 4%;
     width:40%;
     text-align: center;
     align-items: center;

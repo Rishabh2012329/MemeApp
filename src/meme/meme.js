@@ -5,6 +5,7 @@ import '../layout/meme.css';
 import firebase from 'firebase';
 import Saved from './Saved';
 
+
 export default class Meme extends Component {
     constructor(){
         super();
@@ -64,8 +65,6 @@ export default class Meme extends Component {
           axios.post(`https://api.imgflip.com/caption_image?template_id=${template_id}&username=${username}&password=${password}${box}`).then((val)=>{
                  console.log(val.data)
                  this.setState({img:val.data.data.url})
-             }).then(()=>{
-                 alert("image saved successfully")
              })
               
         }
@@ -73,8 +72,11 @@ export default class Meme extends Component {
           save(){
               const {uid} =this.props;
             var images=firebase.database().ref('images/'+uid);
+          
             images.push({
                 img:this.state.img.url||this.state.img
+            }).then(()=>{
+                alert("image saved successfully")
             })
         }
     
@@ -89,7 +91,7 @@ export default class Meme extends Component {
                
             {
                 this.state.img?
-            <div className="card" style={{width:"40%",margin:"auto"}}> 
+            <div className="card" style={{width:"40%",margin:"auto",marginTop:'2%'}}> 
                     {input} 
             <button className="btn btn-dark" style={{margin:"2%",fontSize:"1.5vw"}} onClick={this.onsub}>Submit</button>                  
             </div>:null

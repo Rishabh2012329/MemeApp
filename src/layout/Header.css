@@ -2,16 +2,22 @@
     margin:0px;
 }
 header{
-    background-color: rgba(8, 8, 8, 0.692);
+    background-image: url("https://image.freepik.com/free-vector/bokeh-lights-effect-dark-background_52683-33179.jpg");
     width:100%;
-    padding:40px;
-    height:100%;
+   height:auto;
+   background-position: center;
+   background-repeat: no-repeat;
+   background-size: cover;
+
 }
-.container{
+.containe{
     text-align: center;
     font-size: 5vw;
     font-family:sans-serif;
     color:white;
     text-shadow: 1px 5px 10px rgba(8, 8, 8, 0.692);
-    
+    background-color: rgba(0, 0, 0, 0.459);  
+    padding:40px;
+    padding-top:100px;
+    padding-bottom:100px;
 }
